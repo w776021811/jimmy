@@ -9,10 +9,10 @@ import java.util.Date;
 
 /**
  * @version: V1.0
- * @author: Jimmy
+ * @author: Zhongyuan Wang
  * @className: MetaObjectHandlerConfig
  * @description:  MetaObjectHandlerConfig配置文件
- * @data: 2018-08-01 19:14
+ * @data: 2018-08-17 07:14
  **/
 @Component
 public class MetaObjectHandlerConfig implements MetaObjectHandler {

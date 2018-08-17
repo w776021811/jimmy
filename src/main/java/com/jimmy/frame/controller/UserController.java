@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.api.ApiResult;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.jimmy.frame.entity.SysUser;
-import com.jimmy.frame.service.ISysUserService;
+import com.jimmy.frame.service.SysUserService;
 import com.jimmy.frame.utils.ResultData;
 import com.jimmy.frame.utils.SimpleCode;
 import com.jimmy.frame.utils.SimpleError;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController extends ApiController {
 
     @Autowired
-    private ISysUserService userService;
+    private SysUserService userService;
 
 
     @GetMapping("/test")

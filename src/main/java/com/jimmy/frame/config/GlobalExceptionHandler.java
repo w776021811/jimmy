@@ -17,21 +17,23 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * <p>
- * 通用 Api Controller 全局异常处理
- * </p>
- */
+ * @version: V1.0
+ * @author: Zhongyuan Wang
+ * @className: GlobalExceptionHandler
+ * @description: 通用 Api Controller 全局异常处理
+ * @data: 2018-08-017 07:14
+ **/
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
-
     /**
-     * <p>
-     * 自定义 REST 业务异常
-     * <p>
      *
-     * @param e 异常类型
-     * @return
+     * 功能描述: 自定义 REST 业务异常
+     *
+     * @param:
+     * @return:
+     * @auther: Zhongyuan Wang
+     * @date: 2018/8/17 7:25
      */
     @ExceptionHandler(value = Exception.class)
     public ApiResult<Object> handleBadRequest(Exception e) {

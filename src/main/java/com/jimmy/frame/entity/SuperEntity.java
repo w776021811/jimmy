@@ -10,8 +10,12 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 实体父类
- */
+ * @version: V1.0
+ * @author: Zhongyuan Wang
+ * @className: SuperEntity
+ * @description:  父实体
+ * @data: 2018-08-17 07:15
+ **/
 public class SuperEntity<T extends Model> extends Model<T> {
 
     /**

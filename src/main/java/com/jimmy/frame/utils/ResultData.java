@@ -15,11 +15,10 @@ import java.io.Serializable;
 
 /**
  * @version: V1.0
- * @author: Jimmy
+ * @author: Zhongyuna Wang
  * @className: ResultData
- * @packageName: com.jimmy.frame.utils
  * @description: 返回数据
- * @data: 2018-08-12 10:31
+ * @data: 2018-08-17 07:41
  **/
 @ApiModel
 public class ResultData<T> implements Serializable {

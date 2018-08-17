@@ -19,6 +19,13 @@ import java.util.List;
 
 @Configuration
 //@MapperScan("com.jimmy.**.mapper*")//这个注解，作用相当于下面的@Bean MapperScannerConfigurer，2者配置1份即可
+/**
+ * @version: V1.0
+ * @author: Zhongyuan Wang
+ * @className: MybatisPlusConfig
+ * @description:  MybatisPlus配置文件
+ * @data: 2018-08-17 07:15
+ **/
 public class MybatisPlusConfig {
 
     /**

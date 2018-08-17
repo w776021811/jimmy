@@ -9,8 +9,12 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 /**
- * User 表数据库控制层接口
- */
+ * @version: V1.0
+ * @author: Zhongyuan Wang
+ * @className: SysUserMapper
+ * @description:  User 表数据库控制层接口
+ * @data: 2018-08-17 07:37
+ **/
 public interface SysUserMapper extends SuperMapper<SysUser> {
 
     /**

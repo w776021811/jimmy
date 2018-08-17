@@ -4,18 +4,20 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.jimmy.frame.entity.SysUser;
 import com.jimmy.frame.mapper.SysUserMapper;
-import com.jimmy.frame.service.ISysUserService;
+import com.jimmy.frame.service.SysUserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
- *
- * User 表数据服务层接口实现类
- *
- */
+ * @version: V1.0
+ * @author: Zhongyuan Wang
+ * @className: SysUserServiceImpl
+ * @description:  UserService接口实现
+ * @data: 2018-08-17 07:39
+ **/
 @Service
-public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements ISysUserService {
+public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
 
 	@Override
 	public boolean deleteAll() {
@@ -30,5 +32,15 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 	@Override
 	public List<SysUser> selectListByWrapper(Wrapper wrapper) {
 		return baseMapper.selectListByWrapper(wrapper);
+	}
+
+	@Override
+	public SysUser getUser(Long id) {
+		return baseMapper.selectById(id);
+	}
+
+	@Override
+	public void deleteUser(Long id) {
+		baseMapper.deleteById(id);
 	}
 }

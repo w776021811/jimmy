@@ -2,6 +2,13 @@ package com.jimmy.frame.utils;
 
 import com.baomidou.mybatisplus.extension.api.IErrorCode;
 
+/**
+ * @version: V1.0
+ * @author: Zhongyuna Wang
+ * @className: SimpleError
+ * @description: 异常返回码
+ * @data: 2018-08-17 07:41
+ **/
 public enum SimpleError implements IErrorCode {
 
     DB_RESOURCE_NULL("400","数据库中没有该资源"),

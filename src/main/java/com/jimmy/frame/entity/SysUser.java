@@ -10,9 +10,14 @@ import com.jimmy.frame.entity.enums.StateEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+
 /**
- * 用户表
- */
+ * @version: V1.0
+ * @author: Zhongyuan Wang
+ * @className: SysUser
+ * @description:  用户实体
+ * @data: 2018-08-17 07:17
+ **/
 @TableName("sys_user")
 @ApiModel(value="User对象",description="用户信息")
 public class SysUser extends SuperEntity<SysUser> {

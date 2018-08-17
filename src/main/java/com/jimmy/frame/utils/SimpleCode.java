@@ -1,8 +1,12 @@
 package com.jimmy.frame.utils;
 
 /**
- * 返回码
- */
+ * @version: V1.0
+ * @author: Zhongyuna Wang
+ * @className: SimpleCode
+ * @description: 返回码
+ * @data: 2018-08-17 07:41
+ **/
 public enum SimpleCode {
 
      SUCCESS("000", "成功"),

@@ -8,6 +8,13 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
+/**
+ * @version: V1.0
+ * @author: Zhongyuan Wang
+ * @className: DataSourceConfig
+ * @description: HikariCP配置文件
+ * @data: 2018-08-017 07:14
+ **/
 @Configuration
 public class DataSourceConfig {
 
