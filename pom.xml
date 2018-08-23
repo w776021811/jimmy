@@ -3,28 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.jimmy</groupId>
+	<groupId>com.jimmy.rdf</groupId>
 	<artifactId>jimmy</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>jimmy</name>
-	<description>Spring Boot Jimmy</description>
-	<repositories>
-		<!--阿里云仓库-->
-		<repository>
-			<id>aliyun</id>
-			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-		</repository>
-		<repository>
-			<id>snapshots</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-		</repository>
-	</repositories>
+	<description>Demo project for Spring Boot</description>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.3.RELEASE</version>
+		<version>2.0.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -33,12 +23,15 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
-		<mybatis-plus-boot-starter.version>3.0-RC2</mybatis-plus-boot-starter.version>
-		<HikariCP.version>3.2.0</HikariCP.version>
 		<nekohtml.version>1.9.22</nekohtml.version>
+		<mybatis-plus-boot-starter.version>3.0-RC3</mybatis-plus-boot-starter.version>
 		<swagger2.version>2.8.0</swagger2.version>
 		<commons-pool2.version>2.4.2</commons-pool2.version>
 		<fastjson.version>1.2.8</fastjson.version>
+		<HikariCP.version>3.2.0</HikariCP.version>
+		<shiro-reids.version>2.4.2.1-RELEASE</shiro-reids.version>
+		<thymeleaf-extras-shiro.version>1.2.1</thymeleaf-extras-shiro.version>
+		<shiro-spring.version>1.3.2</shiro-spring.version>
 	</properties>
 
 	<dependencies>
@@ -48,28 +41,50 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-redis</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>redis.clients</groupId>
-					<artifactId>jedis</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>io.lettuce</groupId>
-					<artifactId>lettuce-core</artifactId>
-				</exclusion>
-			</exclusions>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
-		<!-- 添加jedis客户端 -->
 		<dependency>
-			<groupId>redis.clients</groupId>
-			<artifactId>jedis</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jetty</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+		<!--
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>${shiro-spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.theborakompanioni</groupId>
+			<artifactId>thymeleaf-extras-shiro</artifactId>
+			<version>${thymeleaf-extras-shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.crazycake</groupId>
+			<artifactId>shiro-redis</artifactId>
+			<version>${shiro-reids.version}</version>
+		</dependency>
+		-->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-pool2</artifactId>
 			<version>${commons-pool2.version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.7</version>
+		</dependency>
+
 		<!--fastjson-->
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -84,10 +99,6 @@
 			<groupId>net.sourceforge.nekohtml</groupId>
 			<artifactId>nekohtml</artifactId>
 			<version>${nekohtml.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jetty</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -110,29 +121,11 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>${swagger2.version}</version>
 		</dependency>
-		<!-- 热部署组件 -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional>
-			<scope>true</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
 		<!-- mybatis-plus begin -->
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus-boot-starter</artifactId>
 			<version>${mybatis-plus-boot-starter.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>HikariCP</artifactId>
-					<groupId>com.zaxxer</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<!-- mybatis-plus end -->
 	</dependencies>
@@ -142,9 +135,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<fork>true</fork><!-- fork:如果没有该配置，这个devtools不会起作用，即应用不会restart -->
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

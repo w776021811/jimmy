@@ -1,8 +1,14 @@
 server:
    port: 8080
 spring:
+  cache:
+      redis:
+        use-key-prefix: true
+        time-to-live: 1d
   redis:
     #数据库索引
+    shiro:
+      expire: 1800
     database: 0
     host: 127.0.0.1
     port: 6379
@@ -48,10 +54,10 @@ spring:
     continue-on-error: true
 #mybatis
 mybatis-plus:
-  mapper-locations: classpath:/mappe/**/*Mapper.xml
+  mapper-locations: classpath:/mapper/*/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.jimmy.**.entity
-  typeEnumsPackage: com.jimmy.**.entity.enums
+  typeAliasesPackage: com.jimmy.rdf.*.entity
+  typeEnumsPackage: com.jimmy.rdf.*.entity.enums
   global-config:
     # 数据库相关配置
     db-config:

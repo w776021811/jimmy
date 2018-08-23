@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jimmy.frame.mapper.SysUserMapper">
+<mapper namespace="com.jimmy.rdf.frame.mapper.SysUserMapper">
 
 	<!-- 通用查询结果列 -->
 	<sql id="Base_Column_List">
@@ -11,11 +11,12 @@
 		DELETE FROM SYS_USER
 	</delete>
 
-	<select id="selectListByWrapper" resultType="com.jimmy.frame.entity.SysUser">
+	<select id="selectListByWrapper" resultType="com.jimmy.rdf.frame.entity.SysUser">
 		SELECT * FROM SYS_USER
 		<!-- 判断 wrapper 是否为空 emptyOfWhere -->
 		<where>
 			${ew.sqlSegment}
 		</where>
 	</select>
+
 </mapper>
